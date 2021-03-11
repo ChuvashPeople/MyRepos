@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace TestProjectSimbirSoft
 {
@@ -8,7 +9,17 @@ namespace TestProjectSimbirSoft
         {
             string link = "https://www.simbirsoft.com/";
             string path = @"D:\html\html.txt";
-            Sorting.SortPage(Parsing.ParsePage(DLR.DownloadLoadRead(path, link)));
+            
+
+            string inputPath = @"D:\html\input.txt";
+
+            using (StreamWriter strw = new StreamWriter(inputPath, false))
+            {
+                foreach (var item in Sorting.SortPage(Parsing.ParsePage(DLR.DownloadLoadRead(path, link))))
+                {
+                    strw.WriteLine(item);
+                }
+            }
         }
     }
 }

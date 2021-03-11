@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace TestProjectSimbirSoft
 {
     class Sorting
     {
-        public static void SortPage(string[] text)
+        public static IEnumerable SortPage(string[] text)
         {
             var result = from i in text
                          group i by i into g
@@ -17,10 +18,11 @@ namespace TestProjectSimbirSoft
                              Name = g.Key,
                              Count = g.Count()
                          };
-            foreach (var i in result)
+            foreach (var item in result)
             {
-                Console.WriteLine($"{i.Name} - {i.Count}");
+                Console.WriteLine($"{item.Name} - {item.Count}");
             }
+            return result;
         }
     }
 }

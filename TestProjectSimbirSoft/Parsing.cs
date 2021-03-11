@@ -12,7 +12,7 @@ namespace TestProjectSimbirSoft
         {
             string text = "";
 
-            char[] r = { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(', ')', '\n', '\r', '\t', '«', '»' };
+            char[] r = { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(', ')', '\n', '\r', '\t', '«', '»', '—','/', '©' };
 
             oldText = Remove.RemoveJS(oldText);
             
@@ -31,6 +31,7 @@ namespace TestProjectSimbirSoft
                 }
             }
 
+            text = text.ToUpper();
             string[] mas = text.Split(r, StringSplitOptions.RemoveEmptyEntries);
 
             return mas;
