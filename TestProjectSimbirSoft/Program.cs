@@ -8,7 +8,7 @@ namespace TestProjectSimbirSoft
         {
             string link = "https://www.simbirsoft.com/";
             string path = @"D:\html\html.txt";
-            Console.WriteLine(DLR.DownloadLoadRead(path,link));
+            Sorting.SortPage(Parsing.ParsePage(DLR.DownloadLoadRead(path, link)));
         }
     }
 }

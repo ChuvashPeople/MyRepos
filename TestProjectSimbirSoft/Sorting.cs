@@ -8,7 +8,7 @@ namespace TestProjectSimbirSoft
 {
     class Sorting
     {
-        public static void SortPage(string text)
+        public static void SortPage(string[] text)
         {
             var result = from i in text
                          group i by i into g

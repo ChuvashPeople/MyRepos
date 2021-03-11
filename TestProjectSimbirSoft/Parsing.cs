@@ -8,12 +8,13 @@ namespace TestProjectSimbirSoft
 {
     class Parsing
     {
-        public static string ParsePage(string oldText)
+        public static string[] ParsePage(string oldText)
         {
             string text = "";
 
+            char[] r = { ' ', ',', '.', '!', '?', '"', ';', ':', '[', ']', '(', ')', '\n', '\r', '\t', '«', '»' };
 
-            
+            oldText = Remove.RemoveJS(oldText);
             
             for (int i = 0; i < oldText.Length; i++)
             {
@@ -30,7 +31,9 @@ namespace TestProjectSimbirSoft
                 }
             }
 
-            return text;
+            string[] mas = text.Split(r, StringSplitOptions.RemoveEmptyEntries);
+
+            return mas;
         }
     }
 }

@@ -11,8 +11,10 @@ namespace TestProjectSimbirSoft
     {
         public static string RemoveJS(string text)
         {
-            Regex regex = new Regex(@"(?s)<script.*?(/>|</script>)", RegexOptions.IgnoreCase);
-            text = regex.Replace(text, " ");
+            Regex regexJS = new Regex(@"(?s)<script.*?(/>|</script>)", RegexOptions.IgnoreCase);
+            Regex regexST = new Regex(@"(?s)<style.*?(/>|</style>)", RegexOptions.IgnoreCase);
+            text = regexJS.Replace(text, " ");
+            text = regexST.Replace(text, " ");
             return text;
         }
     }
