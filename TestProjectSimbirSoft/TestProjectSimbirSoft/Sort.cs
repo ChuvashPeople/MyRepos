@@ -21,6 +21,7 @@ namespace TestProjectSimbirSoft
             {
                 Console.WriteLine($"{item.Name} - {item.Count} ");
             }
+
         }
     }
 }

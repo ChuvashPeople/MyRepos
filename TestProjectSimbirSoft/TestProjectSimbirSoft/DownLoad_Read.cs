@@ -9,7 +9,6 @@ namespace TestProjectSimbirSoft
        
         public static string DownloadRead(string path, string link)
         {
-            
             string text = "";
 
             try
@@ -32,9 +31,6 @@ namespace TestProjectSimbirSoft
             {
                 Console.WriteLine("Не правильно указан путь к файлу.");
             }
-
-            
-            
             return text;
         }
     }

@@ -12,7 +12,7 @@ namespace TestProjectSimbirSoft
     {
         public static void GeneralMethod(string link,string path)
         {
-            
+            long before = GC.GetTotalMemory(false);
             using (WebClient client = new WebClient())
             {
                 client.DownloadFile(link, path);
@@ -39,6 +39,9 @@ namespace TestProjectSimbirSoft
 
                 }   
             }
+            long after = GC.GetTotalMemory(false);
+            double consumedInMegabytes = (double)(after - before) / (1024 * 1024);
+            Console.WriteLine(consumedInMegabytes);
         }
     }
 }
