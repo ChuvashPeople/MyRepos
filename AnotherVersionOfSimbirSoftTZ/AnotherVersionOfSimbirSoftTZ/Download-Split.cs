@@ -35,7 +35,7 @@ namespace AnotherVersionOfSimbirSoftTZ
                 {
                     using (StreamWriter sW = new StreamWriter(newPath,false))
                     {
-                        sW.WriteLine(sR.ReadLine());
+                        sW.WriteLine(sR.ReadLine()); 
                     }
                     if (newPath[0].Equals('Z'))
                     {

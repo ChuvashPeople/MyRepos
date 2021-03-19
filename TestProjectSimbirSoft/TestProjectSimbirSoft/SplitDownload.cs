@@ -35,7 +35,8 @@ namespace TestProjectSimbirSoft
                     }
                     writepath.Replace(oldValue, value);
                     oldValue = value;
-                    value++;
+                    value++; 
+
                 }   
             }
         }
